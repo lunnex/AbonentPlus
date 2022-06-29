@@ -22,12 +22,12 @@ namespace Abonent
         {
             Validate();
 
-            if (IDtb.Text != string.Empty && !clientError.Visible && !failrueError.Visible)
+            if (IDtb.Text != string.Empty && !clientError.Visible && !failrueError.Visible && !incomingRequestError.Visible && !executionRequestError.Visible)
             {
                 UpdateRequest();
             }
 
-            if (IDtb.Text == string.Empty && !clientError.Visible && !failrueError.Visible)
+            if (IDtb.Text == string.Empty && !clientError.Visible && !failrueError.Visible && !incomingRequestError.Visible && !executionRequestError.Visible)
             {
                 AddRequest();
             }
@@ -52,6 +52,32 @@ namespace Abonent
             {
                 failrueError.Visible = false;
             }
+
+            if (incomingDatedp.Value > executionDatedp.Value)
+            {
+                executionRequestError.Visible = true;
+                incomingRequestError.Visible = true;
+            }
+            else
+            {
+                if (incomingDatedp.Value > DateTime.Now)
+                {
+                    incomingRequestError.Visible = true;
+                }
+                else
+                {
+                    incomingRequestError.Visible = false;
+                }
+
+                if (executionDatedp.Value > DateTime.Now)
+                {
+                    executionRequestError.Visible = true;
+                }
+                else
+                {
+                    executionRequestError.Visible = false;
+                }
+            } 
         }
 
         private void AddRequest()

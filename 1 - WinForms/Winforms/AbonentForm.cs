@@ -30,7 +30,7 @@ namespace Abonent
             {
                 UpdateAbonent();
             }
-            if (!fioError.Visible && !streetError.Visible && !buildingError.Visible && !flatError.Visible && !fioError.Visible && !phoneError.Visible)
+            if (IDtb.Text == string.Empty && !fioError.Visible && !streetError.Visible && !buildingError.Visible && !flatError.Visible && !fioError.Visible && !phoneError.Visible)
             {
                 AddAbonent();
             }

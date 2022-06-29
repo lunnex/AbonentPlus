@@ -45,6 +45,8 @@
             this.DoneBtn = new System.Windows.Forms.Button();
             this.clientError = new System.Windows.Forms.Label();
             this.failrueError = new System.Windows.Forms.Label();
+            this.incomingRequestError = new System.Windows.Forms.Label();
+            this.executionRequestError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // IDtb
@@ -190,7 +192,7 @@
             // clientError
             // 
             this.clientError.AutoSize = true;
-            this.clientError.ForeColor = System.Drawing.Color.Red;
+            this.clientError.ForeColor = System.Drawing.Color.Maroon;
             this.clientError.Location = new System.Drawing.Point(178, 78);
             this.clientError.Name = "clientError";
             this.clientError.Size = new System.Drawing.Size(172, 13);
@@ -201,7 +203,7 @@
             // failrueError
             // 
             this.failrueError.AutoSize = true;
-            this.failrueError.ForeColor = System.Drawing.Color.Red;
+            this.failrueError.ForeColor = System.Drawing.Color.Maroon;
             this.failrueError.Location = new System.Drawing.Point(178, 161);
             this.failrueError.Name = "failrueError";
             this.failrueError.Size = new System.Drawing.Size(172, 13);
@@ -209,12 +211,36 @@
             this.failrueError.Text = "Это поле не может быть пустым";
             this.failrueError.Visible = false;
             // 
+            // incomingRequestError
+            // 
+            this.incomingRequestError.AutoSize = true;
+            this.incomingRequestError.ForeColor = System.Drawing.Color.Maroon;
+            this.incomingRequestError.Location = new System.Drawing.Point(178, 201);
+            this.incomingRequestError.Name = "incomingRequestError";
+            this.incomingRequestError.Size = new System.Drawing.Size(221, 13);
+            this.incomingRequestError.TabIndex = 17;
+            this.incomingRequestError.Text = "Действие не может произойти в будущем";
+            this.incomingRequestError.Visible = false;
+            // 
+            // executionRequestError
+            // 
+            this.executionRequestError.AutoSize = true;
+            this.executionRequestError.ForeColor = System.Drawing.Color.Maroon;
+            this.executionRequestError.Location = new System.Drawing.Point(178, 241);
+            this.executionRequestError.Name = "executionRequestError";
+            this.executionRequestError.Size = new System.Drawing.Size(221, 13);
+            this.executionRequestError.TabIndex = 18;
+            this.executionRequestError.Text = "Действие не может произойти в будущем";
+            this.executionRequestError.Visible = false;
+            // 
             // RequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(499, 308);
+            this.Controls.Add(this.executionRequestError);
+            this.Controls.Add(this.incomingRequestError);
             this.Controls.Add(this.failrueError);
             this.Controls.Add(this.clientError);
             this.Controls.Add(this.DoneBtn);
@@ -259,5 +285,7 @@
         public System.Windows.Forms.Button DoneBtn;
         private System.Windows.Forms.Label clientError;
         private System.Windows.Forms.Label failrueError;
+        private System.Windows.Forms.Label incomingRequestError;
+        private System.Windows.Forms.Label executionRequestError;
     }
 }

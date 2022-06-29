@@ -75,7 +75,7 @@
             this.abonentsGV.GridColor = System.Drawing.SystemColors.Control;
             this.abonentsGV.Location = new System.Drawing.Point(363, 12);
             this.abonentsGV.Name = "abonentsGV";
-            this.abonentsGV.Size = new System.Drawing.Size(678, 697);
+            this.abonentsGV.Size = new System.Drawing.Size(750, 697);
             this.abonentsGV.TabIndex = 1;
             // 
             // requestsGV
@@ -83,9 +83,9 @@
             this.requestsGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.requestsGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.requestsGV.GridColor = System.Drawing.SystemColors.Control;
-            this.requestsGV.Location = new System.Drawing.Point(1047, 12);
+            this.requestsGV.Location = new System.Drawing.Point(1119, 12);
             this.requestsGV.Name = "requestsGV";
-            this.requestsGV.Size = new System.Drawing.Size(693, 697);
+            this.requestsGV.Size = new System.Drawing.Size(793, 697);
             this.requestsGV.TabIndex = 2;
             // 
             // executorStrip
@@ -231,7 +231,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1752, 721);
+            this.ClientSize = new System.Drawing.Size(1924, 721);
             this.Controls.Add(this.requestsGV);
             this.Controls.Add(this.abonentsGV);
             this.Controls.Add(this.executorsGV);
