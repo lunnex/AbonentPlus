@@ -1,0 +1,30 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>Введите номер нужной строки</p>
+
+<p *ngIf="!forecast"><em>Номер строки еще не введен или такой строкин не существует</em></p>
+
+<form>
+  <input type="number" [(ngModel)]="id" name="id">
+  <p> </p>
+  <button (click) = "getItem()"> Ввод</button>
+</form>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecast">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Temp. (C)</th>
+      <th>Temp. (F)</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ forecast.date }}</td>
+      <td>{{ forecast.temperatureC }}</td>
+      <td>{{ forecast.temperatureF }}</td>
+      <td>{{ forecast.summary }}</td>
+    </tr>
+  </tbody>
+</table>
