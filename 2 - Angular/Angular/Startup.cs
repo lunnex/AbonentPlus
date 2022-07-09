@@ -21,7 +21,6 @@ namespace Angular
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -52,9 +51,6 @@ namespace Angular
             }
 
             app.UseRouting();
-
-            app.UseCors(builder =>
-        builder.WithOrigins("http://localhost:4200"));
 
             app.UseEndpoints(endpoints =>
             {

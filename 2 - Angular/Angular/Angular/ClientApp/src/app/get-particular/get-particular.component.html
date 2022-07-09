@@ -2,7 +2,7 @@
 
 <p>Введите номер нужной строки</p>
 
-<p *ngIf="!forecast"><em>Номер строки еще не введен или такой строкин не существует</em></p>
+<p *ngIf="!forecast"><em>{{ errorString }}</em></p>
 
 <form>
   <input type="number" [(ngModel)]="id" name="id">

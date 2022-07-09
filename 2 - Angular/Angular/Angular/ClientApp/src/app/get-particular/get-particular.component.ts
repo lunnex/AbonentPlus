@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class GetParticularComponent {
   public forecast: WeatherForecast;
   public forecasts: WeatherForecast[] = [];
+  public errorString: string;
   public id: number;
   public http: HttpClient;
   public url: string;
@@ -19,16 +20,18 @@ export class GetParticularComponent {
       this.forecasts = result;
     }, error => console.error(error));
 
-    http.get<WeatherForecast>(baseUrl + 'getparticular?id=' + this.id).subscribe(result => {
-      this.forecast = result;
-    }, error => console.error(error));
-
+    this.errorString = "Номер еще не введен";
     this.http = http;
     this.url = baseUrl;
   }
 
   getItem(): void {
-    if (this.id > this.forecasts.length) {
+    if (this.id >= this.forecasts.length || 0 > this.id) {
+      this.errorString = "Такой строки не существует";
+      this.forecast = undefined;
+    }
+    else if (typeof (this.id) != "number") {
+      this.errorString = "Не число";
       this.forecast = undefined;
     }
     else {
@@ -38,8 +41,6 @@ export class GetParticularComponent {
     }
   }
 }
-
-
 
 interface WeatherForecast {
   date: string;
